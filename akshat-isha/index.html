@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<link rel="icon" href="data:,">
+<title>Akshat &amp; Isha — Engagement Invitation · From the Agnihotri Family</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Great+Vibes&family=Marcellus&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FFFBF0; --bg2:#FFF1CC; --paper:#FFFEF9;
+    --maroon:#6E1426; --maroon-2:#8A1E32; --maroon-deep:#420A18;
+    --gold:#9C7C3C; --gold-2:#C9A959; --gold-light:#EFE0B0;
+    --ink:#23180E; --body:#3E2E1E; --muted:#57452F; --line:#E3D5B2;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:linear-gradient(180deg,#FFFBF0 0%,#FFF1CC 48%,#FFFBF0 100%);color:var(--body);font-family:"Jost",system-ui,-apple-system,Segoe UI,sans-serif;font-size:17px;line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  img,svg,iframe{max-width:100%}
+  .bgdots{position:fixed;inset:0;z-index:0;pointer-events:none;background-image:radial-gradient(rgba(156,124,60,.13) 1px, transparent 1.4px);background-size:26px 26px;opacity:.55}
+  #petals{position:fixed;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+  .petal{position:absolute;top:-30px;border-radius:80% 0 80% 0;background:linear-gradient(135deg,#EFB0BE,#D46A7E);opacity:.65;animation:fall linear infinite;box-shadow:0 4px 8px rgba(110,20,38,.15)}
+  @keyframes fall{to{transform:translateY(112vh) translateX(4vw) rotate(540deg)}}
+  .wrap{position:relative;z-index:2;max-width:1120px;margin:0 auto;padding:0 20px 96px}
+
+  @keyframes riseIn{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes floatSway{0%,100%{transform:translateY(0) rotateY(-2.6deg) rotateX(1deg)}50%{transform:translateY(-10px) rotateY(2.6deg) rotateX(-1deg)}}
+  @keyframes shineSweep{0%,62%{transform:translateX(-140%) skewX(-18deg)}88%,100%{transform:translateX(260%) skewX(-18deg)}}
+  @keyframes goldPulse{0%,100%{opacity:.55}50%{opacity:1}}
+  @keyframes twinkle{0%,100%{opacity:.1;transform:scale(.6)}50%{opacity:1;transform:scale(1.15)}}
+  @keyframes flipNum{0%{transform:rotateX(80deg);opacity:.3}100%{transform:rotateX(0);opacity:1}}
+  @keyframes ringSpin{to{transform:rotate(360deg)}}
+  @keyframes btnPulse{0%{box-shadow:0 14px 28px rgba(47,93,58,.3),0 0 0 0 rgba(47,93,58,.35)}100%{box-shadow:0 14px 28px rgba(47,93,58,.3),0 0 0 15px rgba(47,93,58,0)}}
+  @keyframes nameFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+  .anim-in{animation:riseIn .9s cubic-bezier(.2,.7,.2,1) both}
+  .d1{animation-delay:.1s}.d2{animation-delay:.22s}.d3{animation-delay:.34s}
+
+  /* ===== HEADER / HOST ===== */
+  .top{text-align:center;padding:38px 0 2px}
+  .ganesh{letter-spacing:.12em;text-transform:uppercase;font-size:12.5px;color:#7A5E22;font-weight:700;padding:0 8px}
+  .om{font-size:46px;line-height:1.1;color:var(--maroon);margin:10px 0 2px;text-shadow:0 3px 0 #F1E2B8,0 10px 22px rgba(110,20,38,.22)}
+  .blessing{font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:600;font-size:20px;color:#43321F;padding:0 10px}
+  .orn{display:flex;align-items:center;justify-content:center;gap:12px;margin:18px auto 0;max-width:440px;padding:0 12px}
+  .orn i{display:block;height:2px;background:linear-gradient(90deg,transparent,var(--gold-2),transparent);flex:1}
+  .orn span{color:var(--gold);font-size:18px;animation:goldPulse 3.2s ease-in-out infinite}
+  .host{text-align:center;max-width:760px;margin:22px auto 0;padding:0 10px}
+  .host .hk{letter-spacing:.18em;text-transform:uppercase;font-size:12px;color:#7A5E22;font-weight:700}
+  .host p{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:21px;line-height:1.6;color:#332412;margin:10px 0 0}
+  .host p b{color:var(--maroon);font-weight:700}
+  .host-badge{display:inline-block;margin-top:14px;background:var(--maroon);color:#FFF6DE;padding:8px 18px;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;box-shadow:0 10px 22px rgba(110,20,38,.28)}
+
+  /* ===== HERO NAMES — groom first ===== */
+  .hero{text-align:center;padding:16px 0 4px}
+  .hero .invite-line{letter-spacing:.16em;text-transform:uppercase;font-size:13px;color:#4A3823;font-weight:600;padding:0 10px;line-height:1.7}
+  .names{font-family:"Great Vibes",cursive;font-weight:400;color:var(--maroon-deep);line-height:1.12;margin:10px 0 4px;padding:6px 8px 12px;animation:nameFloat 7s ease-in-out infinite;text-shadow:0 1px 0 #F3E3B2,0 2px 0 #EAD9A0,0 4px 2px rgba(156,124,60,.3),0 18px 30px rgba(110,20,38,.26)}
+  .names .n1{display:block;font-size:clamp(58px,12vw,112px);color:var(--maroon)}
+  .names .amp{display:block;font-size:clamp(28px,5vw,44px);color:#8A6A24;margin:0;line-height:1.1}
+  .names .n2{display:block;font-size:clamp(46px,9.5vw,88px)}
+  .hero-date{font-family:"Marcellus",serif;letter-spacing:.08em;text-transform:uppercase;font-size:clamp(15px,2.6vw,19px);color:#241708;margin-top:14px;padding:0 8px;line-height:1.6}
+  .hero-date b{color:var(--maroon)}
+  .hero-venue{margin-top:7px;font-family:"Cormorant Garamond",serif;font-weight:600;font-size:21px;color:var(--muted);padding:0 10px;line-height:1.5}
+
+  /* ===== MUSIC ===== */
+  .music-card{max-width:660px;margin:28px auto 0;background:#fff;border:1px solid var(--gold-light);border-radius:22px;padding:24px 20px 18px;text-align:center;box-shadow:0 24px 48px rgba(66,10,24,.13)}
+  .music-card .mk{letter-spacing:.18em;text-transform:uppercase;font-size:11.5px;color:#7A5E22;font-weight:700}
+  .music-card h2{font-family:"Marcellus",serif;font-size:25px;color:var(--maroon-deep);margin:9px 0 2px;line-height:1.3}
+  .music-card h2 span{font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:600;color:var(--muted);font-size:18px}
+  .music-card p{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:18px;color:#4A3823;margin:7px 0 15px;line-height:1.55}
+  .music-btn{appearance:none;border:none;background:var(--maroon);color:#FFF6DE;padding:14px 28px;border-radius:999px;font-family:"Jost",sans-serif;font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;display:inline-flex;align-items:center;gap:9px;box-shadow:0 14px 28px rgba(110,20,38,.28);transition:transform .2s ease}
+  .music-btn:hover{transform:translateY(-2px)}
+  .music-btn.playing{background:#2F5D3A;animation:btnPulse 1.6s ease-out infinite}
+  .music-note{font-size:13px;color:#5C4A32;margin-top:11px;line-height:1.5}
+  .spotify-wrap{margin-top:16px;border-radius:14px;overflow:hidden;box-shadow:0 8px 20px rgba(0,0,0,.08)}
+  .spotify-wrap iframe{display:block;width:100%;height:152px;border:0}
+  .yt-hidden{position:absolute;width:2px;height:2px;overflow:hidden;opacity:.01;pointer-events:none;left:-10px;top:-10px}
+  .music-fab{position:fixed;right:14px;bottom:16px;z-index:60;background:var(--maroon);color:#FFF6DE;border:1px solid var(--gold-2);border-radius:999px;padding:13px 19px;font-family:"Jost",sans-serif;font-size:13px;font-weight:700;cursor:pointer;box-shadow:0 16px 34px rgba(0,0,0,.3);display:flex;align-items:center;gap:8px}
+  .music-fab.playing{background:#2F5D3A}
+
+  /* ===== 3D FLIP CARD — same text-safe build as the bride-side card:
+       no decorative plates, no glare layers, no entrance animation on the
+       flip element itself, sparkles stay flat (no translateZ), and the text
+       panel is a solid top layer on each face. ===== */
+  .stage-wrap{margin:36px auto 6px;max-width:900px;width:100%}
+  .hint{text-align:center;font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#5C4A32;margin-bottom:14px;padding:0 12px;line-height:1.7}
+  .scene{perspective:1900px;perspective-origin:50% 42%;display:flex;flex-direction:column;align-items:center;padding:16px 0 4px;width:100%;position:relative}
+  .float-wrap{animation:floatSway 9s ease-in-out infinite;transform-style:preserve-3d}
+  .tilt{transform-style:preserve-3d;will-change:transform;position:relative}
+  .spark{position:absolute;border-radius:50%;background:radial-gradient(circle,#FFE9A8 0%,#E9C766 45%,rgba(233,199,102,0) 72%);pointer-events:none;z-index:6;animation:twinkle 3.4s ease-in-out infinite}
+  .card-shadow{width:min(360px,78vw);height:34px;margin-top:26px;border-radius:50%;background:radial-gradient(ellipse at center,rgba(66,10,24,.42) 0%,rgba(66,10,24,.16) 52%,transparent 72%);filter:blur(7px)}
+  .card3d{position:relative;width:min(410px,94vw);height:620px;transform-style:preserve-3d;transition:transform 1.05s cubic-bezier(.18,.78,.22,1)}
+  .card3d.flipped{transform:rotateY(180deg)}
+  .face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:20px;overflow:hidden;background:linear-gradient(165deg,#FFFFFF 0%,var(--paper) 52%,#FFF6DC 100%);box-shadow:inset 0 1px 0 #fff,0 34px 64px rgba(66,10,24,.3),0 14px 28px rgba(66,10,24,.2);z-index:1}
+  .face.back{transform:rotateY(180deg)}
+  .face-inner{position:absolute;inset:11px;z-index:12;opacity:1;visibility:visible;border:1.5px solid var(--gold-2);border-radius:14px;padding:24px 22px 18px;display:flex;flex-direction:column;align-items:center;text-align:center;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:none;background:radial-gradient(340px 220px at 50% -4%, rgba(185,151,91,.18), transparent 72%),#FFFEF9;color:var(--body)}
+  .face-inner::-webkit-scrollbar{display:none}
+  .face-inner::before{content:"";position:absolute;inset:6px;border:1px solid #EADFAF;border-radius:10px;pointer-events:none;z-index:0}
+  .face-inner>*{max-width:100%;overflow-wrap:break-word;position:relative;z-index:1}
+  .shine{position:absolute;top:-10%;bottom:-10%;width:34%;left:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.5),transparent);pointer-events:none;z-index:1;animation:shineSweep 6.5s ease-in-out infinite}
+  .corner{position:absolute;width:40px;height:40px;color:var(--gold);opacity:.95;z-index:5;pointer-events:none}
+  .c-tl{top:11px;left:11px}.c-tr{top:11px;right:11px;transform:scaleX(-1)}.c-bl{bottom:11px;left:11px;transform:scaleY(-1)}.c-br{bottom:11px;right:11px;transform:scale(-1)}
+  .mono{position:relative;width:80px;height:80px;flex:0 0 auto;border-radius:50%;border:1.5px solid var(--gold);display:grid;place-items:center;margin-top:2px;background:radial-gradient(circle at 32% 26%,#fff,#FFF3CF);box-shadow:0 0 0 6px #FFF8E6,0 0 0 7.5px var(--gold-light),0 14px 24px rgba(110,20,38,.2)}
+  .mono::after{content:"";position:absolute;inset:-11px;border-radius:50%;border:1.5px dashed rgba(156,124,60,.55);animation:ringSpin 26s linear infinite;pointer-events:none}
+  .mono span{font-family:"Great Vibes",cursive;font-size:33px;color:var(--maroon);line-height:1;padding-top:6px}
+  .front-kicker{margin-top:17px;letter-spacing:.14em;text-transform:uppercase;font-size:11.5px;color:#7A5E22;font-weight:700;line-height:1.6}
+  .front-title{font-family:"Marcellus",serif;font-size:clamp(22px,6vw,28px);letter-spacing:.03em;color:var(--maroon-deep);margin:8px 0 0;text-transform:uppercase;line-height:1.25}
+  .front-names{font-family:"Great Vibes",cursive;font-size:clamp(46px,11vw,54px);line-height:1.14;color:var(--maroon);margin:10px 0 0;text-shadow:0 1px 0 #FFF0BE,0 2px 0 #EFDB9E,0 10px 18px rgba(110,20,38,.2)}
+  .front-names small{display:block;font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:600;font-size:18px;letter-spacing:.02em;color:#7A5E22;margin:3px 0}
+  .divider{width:128px;height:18px;margin:11px auto 7px;color:var(--gold);flex:0 0 auto}
+  .front-date{font-family:"Marcellus",serif;letter-spacing:.04em;font-size:clamp(14px,3.8vw,16.5px);color:#1F1408;line-height:1.6;background:#FFF6DC;border:1px solid #EBDBA6;border-radius:999px;padding:7px 14px;box-shadow:0 6px 14px rgba(110,20,38,.1)}
+  .front-date strong{color:var(--maroon)}
+  .front-venue{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:19px;color:#332412;line-height:1.55;margin-top:11px;max-width:305px}
+  .front-venue span{display:block}
+  .front-host{margin-top:10px;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#6B573A;line-height:1.6}
+  .front-foot{margin-top:auto;padding-top:13px;font-size:10.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#6B573A;line-height:1.6}
+  .back h3{font-family:"Marcellus",serif;letter-spacing:.04em;text-transform:uppercase;color:var(--maroon);font-size:20px;margin:7px 0 5px;line-height:1.3}
+  .back .small{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:18px;line-height:1.65;color:#2A1C0D;margin:0;max-width:308px}
+  .back .label{letter-spacing:.14em;text-transform:uppercase;font-size:11.5px;color:#7A5E22;font-weight:700;margin-top:15px;line-height:1.5}
+  .back .names-sm{font-family:"Cormorant Garamond",serif;font-weight:700;font-size:19.5px;color:var(--maroon-deep);line-height:1.4;max-width:305px}
+  .back .names-sm span{display:block;font-weight:600;font-size:16.5px;color:#4E3B24;line-height:1.55;margin-top:3px}
+  .controls{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:24px 0 4px;padding:0 6px}
+  .btn{appearance:none;border:1px solid var(--gold);background:var(--maroon);color:#FFF8E6;padding:13px 19px;border-radius:999px;font-family:"Jost",sans-serif;letter-spacing:.05em;text-transform:uppercase;font-size:13px;font-weight:700;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:transform .22s ease,box-shadow .22s ease;text-align:center;box-shadow:0 3px 0 var(--maroon-deep),0 12px 24px rgba(110,20,38,.2)}
+  .btn:hover{transform:translateY(-2px)}
+  .btn:active{transform:translateY(2px)}
+  .btn.ghost{background:#fff;color:var(--maroon);box-shadow:0 3px 0 var(--gold-2),0 12px 24px rgba(110,20,38,.14)}
+  .btn.gold{background:linear-gradient(180deg,#D8BE77,#B08D3E);color:#241600;border-color:#96762C;box-shadow:0 3px 0 #7A5E22,0 12px 24px rgba(110,20,38,.2)}
+
+  /* ===== COUNTDOWN — visible by default ===== */
+  .countdown{max-width:760px;margin:38px auto 0;background:linear-gradient(160deg,#5C1222,var(--maroon-deep) 62%);color:#FFF6DE;border-radius:22px;padding:28px 16px 24px;text-align:center;box-shadow:0 30px 56px rgba(66,10,24,.34);position:relative;overflow:hidden}
+  .countdown::before{content:"";position:absolute;inset:9px;border:1px solid rgba(212,185,120,.5);border-radius:15px;pointer-events:none}
+  .countdown h2{font-family:"Marcellus",serif;letter-spacing:.08em;text-transform:uppercase;font-size:16.5px;margin:0;color:var(--gold-light);line-height:1.5;padding:0 8px}
+  .countdown p{font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:600;font-size:18.5px;color:#F3E3B2;margin:7px 0 19px;padding:0 8px;line-height:1.55}
+  .cd-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;max-width:530px;margin:0 auto;position:relative}
+  .cd-box{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.16);border-radius:15px;padding:15px 4px 13px;min-width:0;box-shadow:inset 0 1px 0 rgba(255,255,255,.14),0 8px 16px rgba(0,0,0,.18)}
+  .cd-num{font-family:"Marcellus",serif;font-size:clamp(26px,7vw,36px);line-height:1.1;color:#fff;display:block;font-variant-numeric:tabular-nums}
+  .cd-num.tick{animation:flipNum .5s cubic-bezier(.2,.7,.2,1)}
+  .cd-lab{font-size:10.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-light);margin-top:6px}
+
+  /* ===== SECTIONS — visible by default, no scroll-reveal hiding ===== */
+  .section{margin-top:58px}
+  .sec-head{text-align:center;margin-bottom:24px;padding:0 8px}
+  .sec-head .k{letter-spacing:.18em;text-transform:uppercase;font-size:12px;color:#7A5E22;font-weight:700;line-height:1.6}
+  .sec-head h2{font-family:"Marcellus",serif;font-size:clamp(30px,5vw,40px);color:var(--maroon-deep);margin:8px 0 0;letter-spacing:.02em;line-height:1.25}
+  .sec-head h2::after{content:"";display:block;width:88px;height:3px;border-radius:2px;margin:13px auto 0;background:linear-gradient(90deg,var(--gold-2),var(--maroon),var(--gold-2))}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .fam{background:linear-gradient(180deg,#fff,#FFFEF7);border:1px solid var(--line);border-radius:22px;padding:30px 24px;box-shadow:0 22px 42px rgba(66,10,24,.11);position:relative;overflow:hidden;transition:transform .35s ease,box-shadow .35s ease}
+  .fam:hover{transform:translateY(-6px);box-shadow:0 34px 58px rgba(66,10,24,.17)}
+  .fam::before{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--gold-2),var(--maroon),var(--gold-2))}
+  .fam.host-fam{border:1.5px solid var(--gold-2);background:linear-gradient(180deg,#FFF8E6,#FFFEF7)}
+  .fam .side{letter-spacing:.14em;text-transform:uppercase;font-size:12px;color:#7A5E22;font-weight:700;text-align:center;line-height:1.6}
+  .fam .host-tag{display:block;margin-top:6px;font-size:10.5px;color:var(--maroon);letter-spacing:.16em}
+  .fam h3{font-family:"Great Vibes",cursive;font-weight:400;font-size:clamp(38px,9vw,46px);color:var(--maroon);text-align:center;margin:10px 0 2px;line-height:1.15;overflow-wrap:break-word}
+  .fam .role{text-align:center;font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:600;color:var(--muted);font-size:17.5px}
+  .fam hr{border:none;border-top:1px solid var(--line);margin:20px 0}
+  .fam dl{margin:0;display:grid;gap:15px}
+  .fam dt{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#7A5E22;text-align:center}
+  .fam dd{margin:5px 0 0;text-align:center;font-family:"Cormorant Garamond",serif;font-size:20.5px;font-weight:700;color:#241708;line-height:1.4;overflow-wrap:break-word}
+  .fam dd span{font-weight:600;color:var(--muted);font-size:17px}
+  .details{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+  .detail{background:#fff;border:1px solid var(--line);border-radius:20px;padding:26px 17px;text-align:center;box-shadow:0 16px 32px rgba(66,10,24,.08);transition:transform .35s ease,box-shadow .35s ease}
+  .detail:hover{transform:translateY(-6px);box-shadow:0 28px 46px rgba(66,10,24,.14)}
+  .detail .icon{width:56px;height:56px;margin:0 auto 13px;border-radius:50%;background:var(--bg2);border:1px solid var(--gold-light);display:grid;place-items:center;font-size:24px;box-shadow:0 8px 16px rgba(110,20,38,.1)}
+  .detail h3{font-family:"Marcellus",serif;letter-spacing:.07em;text-transform:uppercase;font-size:15px;color:var(--maroon);margin:0 0 9px}
+  .detail p{margin:0;font-family:"Cormorant Garamond",serif;font-weight:600;font-size:19.5px;line-height:1.55;color:#332412}
+  .detail p small{color:var(--muted);font-size:16.5px}
+  .venue-card{margin-top:18px;background:linear-gradient(135deg,#FFFDF6,#FFEFC2);border:1px solid var(--gold-light);border-radius:22px;padding:30px;display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center;box-shadow:0 22px 44px rgba(66,10,24,.11)}
+  .venue-card h3{font-family:"Marcellus",serif;font-size:27px;color:var(--maroon-deep);margin:0 0 9px;line-height:1.3}
+  .venue-card p{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:20px;line-height:1.6;color:#332412;margin:0}
+  .venue-visual{border-radius:18px;min-height:190px;background:radial-gradient(220px 130px at 30% 26%, rgba(185,151,91,.4), transparent 62%),linear-gradient(160deg,#7A1B30,#420A18);color:#F7E8BC;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:22px;box-shadow:inset 0 1px 0 rgba(255,255,255,.2),0 16px 30px rgba(66,10,24,.24)}
+  .venue-visual .taj{font-size:40px}
+  .venue-visual strong{font-family:"Marcellus",serif;letter-spacing:.09em;text-transform:uppercase;font-size:16px;margin-top:9px}
+  .venue-visual span{font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:600;font-size:17.5px;color:#EED9A0;line-height:1.5}
+  .blessing-box{text-align:center;max-width:740px;margin:58px auto 0;padding:32px 18px}
+  .blessing-box p{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:22.5px;line-height:1.7;color:#332412;font-style:italic;margin:0}
+  .blessing-box .sig{font-family:"Great Vibes",cursive;font-size:38px;color:var(--maroon);margin-top:15px;font-style:normal}
+  footer{text-align:center;padding:36px 8px 6px;color:#5C4A32;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;line-height:1.9}
+  footer strong{color:var(--maroon)}
+
+  @media (max-width:760px){
+    .wrap{padding:0 14px 96px}
+    .grid2,.details,.venue-card{grid-template-columns:1fr}
+    .venue-card{padding:24px 19px}
+    .card3d{width:min(94vw,386px);height:640px}
+    .face-inner{padding:21px 18px 16px}
+    .controls .btn{flex:1 1 42%;padding:13px 10px;font-size:12px}
+  }
+  @media (max-width:420px){
+    .card3d{width:94vw;height:664px}
+    .mono{width:72px;height:72px}.mono span{font-size:29px}
+    .front-names{font-size:47px}
+    .front-venue{font-size:17.5px}
+    .back .small{font-size:16.5px;line-height:1.58}
+    .back .names-sm{font-size:18.5px}
+    .back .names-sm span{font-size:15.5px}
+    .back .label{margin-top:12px}
+    .blessing-box p{font-size:20px}
+    .music-fab{left:14px;right:14px;justify-content:center;bottom:12px}
+  }
+  @media (max-width:350px){ .card3d{height:684px} .cd-grid{gap:6px} }
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+<div class="bgdots"></div>
+<div id="petals" aria-hidden="true"></div>
+
+<div class="wrap">
+  <header class="top anim-in">
+    <div class="ganesh">॥ Shree Ganeshaya Namah ॥</div>
+    <div class="om">ॐ</div>
+    <div class="blessing">With the divine blessings of our families</div>
+    <div class="orn"><i></i><span>◆</span><i></i></div>
+  </header>
+
+  <section class="host anim-in d1">
+    <div class="hk">From the Groom's Family · With Joy &amp; Blessings</div>
+    <p><b>Captain Kamlesh Kumar Agnihotri &amp; Sheelu Agnihotri</b>, together with <b>Shri Prakash Agnihotri &amp; Pushp Lata Agnihotri</b>, cordially invite you to celebrate the engagement of their beloved son</p>
+    <div><span class="host-badge">✦ The Agnihotri Family Invites You ✦</span></div>
+  </section>
+
+  <section class="hero anim-in d2">
+    <div class="invite-line">You are cordially invited to the engagement of</div>
+    <h1 class="names">
+      <span class="n1">Akshat</span>
+      <span class="amp">&amp;</span>
+      <span class="n2">Isha</span>
+    </h1>
+    <div class="hero-date">Friday &nbsp;•&nbsp; <b>11 December 2026</b> &nbsp;•&nbsp; 4:00 PM</div>
+    <div class="hero-venue">Tajview, Agra — IHCL &nbsp;·&nbsp; Agra, Uttar Pradesh</div>
+  </section>
+
+  <section class="music-card" aria-label="Background song Sunehera by Jai Dhir">
+    <div class="mk">💍 Our Engagement Song 💍</div>
+    <h2>Sunehera <span>— Jai Dhir &amp; Lost Stories</span></h2>
+    <p>Tap play and let our song play in the background while you read the invitation.</p>
+    <button class="music-btn" id="musicBtn" type="button">▶ Play Sunehera</button>
+    <div class="music-note" id="musicStatus">Music is off — tap Play above. Official YouTube stream, no autoplay.</div>
+    <div class="spotify-wrap">
+      <iframe title="Sunehera by Jai Dhir and Lost Stories on Spotify" src="https://open.spotify.com/embed/track/7qkxyDKLcLSHW1j5Of4x8g?utm_source=generator" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="music-note">Also on Spotify above — use either player to play / pause.</div>
+  </section>
+  <div class="yt-hidden" aria-hidden="true"><div id="ytPlayer"></div></div>
+
+  <section class="stage-wrap" aria-label="3D engagement invitation card">
+    <div class="hint">✦ Move your finger / mouse over the card · Tap Flip to see both sides ✦</div>
+    <div class="scene" id="scene">
+      <div class="float-wrap">
+        <div class="tilt" id="tilt">
+          <div class="card3d" id="card3d">
+            <div class="face front">
+              <div class="shine" aria-hidden="true"></div>
+              <svg class="corner c-tl" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 40 V14 Q4 4 14 4 H40"/><circle cx="14" cy="14" r="3"/></svg>
+              <svg class="corner c-tr" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 40 V14 Q4 4 14 4 H40"/><circle cx="14" cy="14" r="3"/></svg>
+              <svg class="corner c-bl" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 40 V14 Q4 4 14 4 H40"/><circle cx="14" cy="14" r="3"/></svg>
+              <svg class="corner c-br" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 40 V14 Q4 4 14 4 H40"/><circle cx="14" cy="14" r="3"/></svg>
+              <div class="face-inner">
+                <div class="mono"><span>A · I</span></div>
+                <div class="front-kicker">Shubh Sagai · Ring Ceremony</div>
+                <div class="front-title">Engagement Invitation</div>
+                <div class="front-names">Akshat<small>— engaged to —</small>Isha</div>
+                <svg class="divider" viewBox="0 0 120 18" fill="none" stroke="currentColor" aria-hidden="true"><path d="M0 9 H42 M78 9 H120"/><path d="M60 2 L66 9 L60 16 L54 9 Z" fill="currentColor" stroke="none"/><circle cx="48" cy="9" r="2" fill="currentColor" stroke="none"/><circle cx="72" cy="9" r="2" fill="currentColor" stroke="none"/></svg>
+                <div class="front-date">FRIDAY, <strong>11 DEC 2026</strong> · 4:00 PM</div>
+                <div class="front-venue"><span>Tajview, Agra — IHCL</span><span>Fatehabad Road, Tajganj, Agra</span></div>
+                <div class="front-host">With love, from the Agnihotri Family</div>
+                <div class="front-foot">Agnihotri &amp; Chaturvedi Families</div>
+              </div>
+            </div>
+            <div class="face back">
+              <div class="shine" aria-hidden="true"></div>
+              <svg class="corner c-tl" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 40 V14 Q4 4 14 4 H40"/><circle cx="14" cy="14" r="3"/></svg>
+              <svg class="corner c-tr" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 40 V14 Q4 4 14 4 H40"/><circle cx="14" cy="14" r="3"/></svg>
+              <svg class="corner c-bl" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 40 V14 Q4 4 14 4 H40"/><circle cx="14" cy="14" r="3"/></svg>
+              <svg class="corner c-br" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 40 V14 Q4 4 14 4 H40"/><circle cx="14" cy="14" r="3"/></svg>
+              <div class="face-inner">
+                <div class="label" style="margin-top:2px">The Agnihotri family requests the honour of your presence</div>
+                <h3>Akshat &amp; Isha</h3>
+                <p class="small">As our son exchanges rings and begins his beautiful journey with Isha, your blessings will mean the world to us.</p>
+                <div class="label">Groom-to-be · Our Son</div>
+                <div class="names-sm">Akshat<span>Son of Captain Kamlesh Kumar Agnihotri &amp; Sheelu Agnihotri · Grandson of Shri Prakash Agnihotri &amp; Pushp Lata Agnihotri</span></div>
+                <div class="label">Bride-to-be</div>
+                <div class="names-sm">Isha<span>Daughter of Anil Kumar Chaturvedi &amp; Meena Chaturvedi · Granddaughter of R.P. Chaturvedi &amp; Uma Chaturvedi</span></div>
+                <div class="label">When &amp; Where</div>
+                <p class="small" style="margin:2px 0 0"><strong style="color:#6E1426">Friday, 11 December 2026 · 4:00 PM</strong><br>Tajview, Agra — IHCL, Fatehabad Rd, Bagichi, Tajganj, Agra, UP 282001</p>
+                <div class="front-foot">Your blessings are the greatest gift</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-shadow" id="cardShadow" aria-hidden="true"></div>
+    </div>
+
+    <div class="controls">
+      <button class="btn" id="flipBtn" type="button">↻ Flip Invitation</button>
+      <button class="btn ghost" id="resetBtn" type="button">Reset 3D View</button>
+      <button class="btn gold" id="calBtn" type="button">♥ Add to Calendar</button>
+      <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=Tajview%2C+Agra+-+IHCL%2C+Fatehabad+Rd%2C+Bagichi%2C+Tajganj%2C+Agra%2C+Uttar+Pradesh+282001" target="_blank" rel="noopener">📍 Get Directions</a>
+    </div>
+  </section>
+
+  <section class="countdown" aria-label="Countdown to engagement">
+    <h2>Counting Down to Akshat &amp; Isha's Engagement</h2>
+    <p>Friday, 11 December 2026 · 4:00 PM · Tajview, Agra</p>
+    <div class="cd-grid">
+      <div class="cd-box"><div class="cd-num" id="cd-d">—</div><div class="cd-lab">Days</div></div>
+      <div class="cd-box"><div class="cd-num" id="cd-h">—</div><div class="cd-lab">Hours</div></div>
+      <div class="cd-box"><div class="cd-num" id="cd-m">—</div><div class="cd-lab">Minutes</div></div>
+      <div class="cd-box"><div class="cd-num" id="cd-s">—</div><div class="cd-lab">Seconds</div></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="sec-head"><div class="k">With Blessings From</div><h2>Our Families</h2></div>
+    <div class="grid2">
+      <article class="fam host-fam">
+        <div class="side">Groom-to-be's Family<span class="host-tag">✦ Your Hosts ✦</span></div>
+        <h3>Akshat</h3>
+        <div class="role">The Groom-to-be · Our Beloved Son</div>
+        <hr>
+        <dl>
+          <div><dt>Father</dt><dd>Captain Kamlesh Kumar Agnihotri</dd></div>
+          <div><dt>Mother</dt><dd>Sheelu Agnihotri</dd></div>
+          <div><dt>Grandparents</dt><dd>Shri Prakash Agnihotri <span>&amp;</span> Pushp Lata Agnihotri</dd></div>
+        </dl>
+      </article>
+      <article class="fam">
+        <div class="side">Bride-to-be's Family</div>
+        <h3>Isha</h3>
+        <div class="role">The Bride-to-be</div>
+        <hr>
+        <dl>
+          <div><dt>Father</dt><dd>Anil Kumar Chaturvedi</dd></div>
+          <div><dt>Mother</dt><dd>Meena Chaturvedi</dd></div>
+          <div><dt>Grandparents</dt><dd>R.P. Chaturvedi <span>&amp;</span> Uma Chaturvedi</dd></div>
+        </dl>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="sec-head"><div class="k">Save The Date</div><h2>Engagement Details</h2></div>
+    <div class="details">
+      <div class="detail"><div class="icon">🗓️</div><h3>Date</h3><p>Friday<br><strong>11 December 2026</strong></p></div>
+      <div class="detail"><div class="icon">🕓</div><h3>Time</h3><p>Ceremony begins<br><strong>4:00 PM</strong><br><small>Please arrive a little early</small></p></div>
+      <div class="detail"><div class="icon">💍</div><h3>Celebration</h3><p>Engagement &amp; Ring Ceremony<br><small>Followed by blessings<br>&amp; celebrations with family</small></p></div>
+    </div>
+    <div class="venue-card">
+      <div>
+        <div style="letter-spacing:.16em;text-transform:uppercase;font-size:12px;color:#7A5E22;font-weight:700">Venue</div>
+        <h3>Tajview, Agra — IHCL</h3>
+        <p>Fatehabad Rd, Bagichi, Tajganj,<br>Agra, Uttar Pradesh 282001<br><span style="color:#57452F;font-size:17.5px">A beautiful celebration venue in the heart of Agra, near the Taj Mahal.</span></p>
+        <div style="margin-top:18px;display:flex;flex-wrap:wrap;gap:10px">
+          <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Tajview%2C+Agra+-+IHCL%2C+Fatehabad+Rd%2C+Bagichi%2C+Tajganj%2C+Agra%2C+Uttar+Pradesh+282001" target="_blank" rel="noopener">Open in Google Maps</a>
+        </div>
+      </div>
+      <div class="venue-visual"><div class="taj">💍</div><strong>Tajview · Agra</strong><span>Fatehabad Road, Tajganj</span><span style="margin-top:10px;font-size:14px;letter-spacing:.1em;text-transform:uppercase;font-style:normal;font-family:Jost,sans-serif">11 · 12 · 2026 — 4 PM</span></div>
+    </div>
+  </section>
+
+  <div class="blessing-box">
+    <p>“Two hearts, two families, one beautiful beginning.<br>From our family to yours — we would be honoured to have you with us<br>as our son Akshat &amp; Isha exchange rings and seek your blessings.”</p>
+    <div class="sig">The Agnihotri Family</div>
+  </div>
+
+  <footer>With love &amp; blessings · <strong>Agnihotri &amp; Chaturvedi Families</strong> · 11 December 2026 · Agra</footer>
+</div>
+
+<button class="music-fab" id="musicFab" type="button" aria-label="Play or pause Sunehera by Jai Dhir">🎵 Play Sunehera</button>
+
+<script>
+(function(){
+  var card=document.getElementById('card3d'), tilt=document.getElementById('tilt'), scene=document.getElementById('scene'), shadow=document.getElementById('cardShadow'), flipBtn=document.getElementById('flipBtn'), resetBtn=document.getElementById('resetBtn');
+  var flipped=false, reduced=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  flipBtn.addEventListener('click',function(){
+    flipped=!flipped; card.classList.toggle('flipped',flipped);
+    flipBtn.textContent=flipped?'↻ See Front Side':'↻ Flip Invitation';
+    if(!reduced && card.animate){ try{ card.animate([{scale:'1'},{scale:'1.04',offset:.38},{scale:'1'}],{duration:1050,easing:'cubic-bezier(.2,.7,.2,1)'}); }catch(e){} }
+    void card.offsetWidth;
+  });
+
+  var tRX=0,tRY=0,cRX=0,cRY=0,raf=null;
+  function loop(){
+    cRX+=(tRX-cRX)*0.085; cRY+=(tRY-cRY)*0.085;
+    tilt.style.transform='rotateX('+cRX.toFixed(2)+'deg) rotateY('+cRY.toFixed(2)+'deg)';
+    if(shadow){ shadow.style.transform='translateX('+(-cRY*1.6).toFixed(1)+'px)'; shadow.style.opacity=String(1-Math.abs(cRY)*0.012); }
+    if(Math.abs(tRX-cRX)>0.02||Math.abs(tRY-cRY)>0.02){ raf=requestAnimationFrame(loop); } else { raf=null; }
+  }
+  function kick(){ if(!raf&&!reduced) raf=requestAnimationFrame(loop); }
+  function handleMove(cx,cy){
+    var r=scene.getBoundingClientRect(); if(!r.width||!r.height) return;
+    var x=(cx-r.left)/r.width-0.5, y=(cy-r.top)/r.height-0.5;
+    tRX=(-y*14); tRY=(x*18); kick();
+  }
+  function resetTilt(){ tRX=0; tRY=0; kick(); }
+  resetBtn.addEventListener('click',resetTilt);
+  scene.addEventListener('mousemove',function(e){ handleMove(e.clientX,e.clientY); });
+  scene.addEventListener('mouseleave',resetTilt);
+  scene.addEventListener('touchmove',function(e){ if(e.touches&&e.touches[0]) handleMove(e.touches[0].clientX,e.touches[0].clientY); },{passive:true});
+  scene.addEventListener('touchend',function(){ setTimeout(resetTilt,700); });
+
+  if(!reduced && tilt){
+    for(var s=0;s<14;s++){
+      var sp=document.createElement('span'); sp.className='spark'; sp.setAttribute('aria-hidden','true');
+      var sz=4+Math.random()*6;
+      sp.style.width=sz+'px'; sp.style.height=sz+'px';
+      sp.style.left=(-4+Math.random()*106)+'%'; sp.style.top=(-3+Math.random()*104)+'%';
+      sp.style.animationDuration=(2.4+Math.random()*2.2)+'s'; sp.style.animationDelay=(-Math.random()*4)+'s';
+      tilt.appendChild(sp);
+    }
+  }
+
+  var target=new Date('2026-12-11T16:00:00+05:30').getTime();
+  var dEl=document.getElementById('cd-d'),hEl=document.getElementById('cd-h'),mEl=document.getElementById('cd-m'),sEl=document.getElementById('cd-s');
+  function pad(n){ return String(n).padStart(2,'0'); }
+  function setVal(el,v){ if(el.textContent!==String(v)){ el.textContent=v; el.classList.remove('tick'); void el.offsetWidth; el.classList.add('tick'); } }
+  function tick(){
+    var diff=target-Date.now();
+    if(diff<=0){ setVal(dEl,'0'); setVal(hEl,'00'); setVal(mEl,'00'); setVal(sEl,'00'); return; }
+    setVal(dEl,Math.floor(diff/86400000)); setVal(hEl,pad(Math.floor(diff%86400000/3600000))); setVal(mEl,pad(Math.floor(diff%3600000/60000))); setVal(sEl,pad(Math.floor(diff%60000/1000)));
+  }
+  tick(); setInterval(tick,1000);
+
+  document.getElementById('calBtn').addEventListener('click',function(){
+    var ics=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Engagement Invitation//Akshat Isha//EN','BEGIN:VEVENT','UID:akshat-isha-engagement-20261211@engagement-invitation','DTSTAMP:20261029T090000Z','DTSTART:20261211T103000Z','DTEND:20261211T133000Z','SUMMARY:Engagement of Akshat & Isha','LOCATION:Tajview\\, Agra - IHCL\\, Fatehabad Rd\\, Bagichi\\, Tajganj\\, Agra\\, Uttar Pradesh 282001','DESCRIPTION:Engagement and ring ceremony of Akshat and Isha. Ceremony begins at 4:00 PM IST.','END:VEVENT','END:VCALENDAR'].join('\r\n');
+    var blob=new Blob([ics],{type:'text/calendar;charset=utf-8'}); var url=URL.createObjectURL(blob); var a=document.createElement('a'); a.href=url; a.download='Akshat-and-Isha-Engagement.ics'; document.body.appendChild(a); a.click(); document.body.removeChild(a); setTimeout(function(){ URL.revokeObjectURL(url); },1500);
+  });
+
+  var musicBtn=document.getElementById('musicBtn'),musicFab=document.getElementById('musicFab'),musicStatus=document.getElementById('musicStatus');
+  var ytPlayer=null,ytReady=false,wantPlay=false,isPlaying=false;
+  function setMusicUI(){
+    var label=isPlaying?'⏸ Pause Sunehera':'▶ Play Sunehera';
+    if(musicBtn){ musicBtn.textContent=label; musicBtn.classList.toggle('playing',isPlaying); }
+    if(musicFab){ musicFab.textContent=isPlaying?'⏸ Sunehera Playing':'🎵 Play Sunehera'; musicFab.classList.toggle('playing',isPlaying); }
+    if(musicStatus){ musicStatus.textContent=isPlaying?'Now playing: Sunehera — Jai Dhir & Lost Stories (official YouTube stream)':'Music is off — tap Play to start Sunehera.'; }
+  }
+  function toggleMusic(){
+    if(ytReady&&ytPlayer){ if(isPlaying){ ytPlayer.pauseVideo(); } else { ytPlayer.playVideo(); } }
+    else { wantPlay=true; if(musicStatus) musicStatus.textContent='Loading Sunehera… please tap Play again in a second if it does not start.'; loadYT(); }
+  }
+  if(musicBtn) musicBtn.addEventListener('click',toggleMusic);
+  if(musicFab) musicFab.addEventListener('click',toggleMusic);
+  function loadYT(){
+    if(window.YT&&window.YT.Player){ createPlayer(); return; }
+    if(!document.querySelector('script[src="https://www.youtube.com/iframe_api"]')){ var tag=document.createElement('script'); tag.src='https://www.youtube.com/iframe_api'; document.head.appendChild(tag); }
+  }
+  function createPlayer(){
+    if(ytPlayer) return;
+    ytPlayer=new window.YT.Player('ytPlayer',{videoId:'ldxLcAqLlxg',playerVars:{autoplay:0,controls:0,loop:1,playlist:'ldxLcAqLlxg',modestbranding:1,rel:0,playsinline:1},events:{onReady:function(){ ytReady=true; if(wantPlay){ ytPlayer.playVideo(); wantPlay=false; } },onStateChange:function(e){ if(window.YT&&e.data===window.YT.PlayerState.PLAYING){ isPlaying=true; } else if(window.YT&&(e.data===window.YT.PlayerState.PAUSED||e.data===window.YT.PlayerState.ENDED)){ isPlaying=false; } setMusicUI(); }}});
+  }
+  window.onYouTubeIframeAPIReady=function(){ createPlayer(); };
+  loadYT(); setMusicUI();
+
+  var petalWrap=document.getElementById('petals');
+  if(!reduced){
+    for(var i=0;i<18;i++){
+      var p=document.createElement('div'); p.className='petal'; var size=8+Math.random()*10;
+      p.style.width=size+'px'; p.style.height=(size*0.75)+'px'; p.style.left=(Math.random()*100)+'vw';
+      p.style.animationDuration=(9+Math.random()*10)+'s'; p.style.animationDelay=(-Math.random()*14)+'s'; p.style.opacity=(0.35+Math.random()*0.45).toFixed(2);
+      petalWrap.appendChild(p);
+    }
+  }
+})();
+</script>
+</body>
+</html>
