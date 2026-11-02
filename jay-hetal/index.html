@@ -1,0 +1,653 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="data:," />
+    <title>Kite Sky Website — Jay weds Hetal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --sky-top: #7ec8e3;
+        --sky-mid: #aee3f5;
+        --sky-low: #fdeeda;
+        --ink: #173a4d;
+        --ink-soft: #3d6376;
+        --paper: #fffdf6;
+        --paper-2: #fdf3df;
+        --gold: #c8912a;
+        --gold-deep: #9a6d15;
+        --saffron: #f08c1e;
+        --pink: #e75480;
+        --teal: #0e9594;
+        --card-line: rgba(200, 145, 42, 0.45);
+        --shadow: 0 18px 44px rgba(23, 58, 77, 0.22);
+        color-scheme: light;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --sky-top: #12283d;
+          --sky-mid: #1d4258;
+          --sky-low: #4a3a2e;
+          --ink: #f3e9d2;
+          --ink-soft: #c9d8de;
+          --paper: #17303f;
+          --paper-2: #1d3d4f;
+          --gold: #e7b958;
+          --gold-deep: #e7b958;
+          --card-line: rgba(231, 185, 88, 0.5);
+          --shadow: 0 18px 44px rgba(0, 0, 0, 0.5);
+          color-scheme: dark;
+        }
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        font-family: "Poppins", system-ui, sans-serif;
+        color: var(--ink);
+        background: linear-gradient(180deg, var(--sky-top) 0%, var(--sky-mid) 34%, var(--sky-low) 78%, var(--sky-low) 100%);
+        background-attachment: fixed;
+        overflow-x: hidden;
+      }
+      h1, h2, h3 { font-family: "Cormorant Garamond", serif; margin: 0; }
+      p { margin: 0; }
+
+      /* ---------- drifting background kites ---------- */
+      .bg-kites { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+      .bg-kites svg { position: absolute; opacity: 0.5; animation: drift 11s ease-in-out infinite alternate; }
+      @keyframes drift {
+        from { transform: translateY(0) rotate(-4deg); }
+        to { transform: translateY(-26px) rotate(5deg); }
+      }
+
+      /* ---------- COVER ---------- */
+      #cover {
+        position: fixed; inset: 0; z-index: 60;
+        display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
+        background: linear-gradient(180deg, #5db4dd 0%, #9adcf7 42%, #ffe9c4 100%);
+        overflow: hidden;
+        transition: opacity 1.1s ease, visibility 1.1s;
+        padding: max(20px, env(safe-area-inset-top)) 16px 24px;
+        text-align: center;
+      }
+      @media (prefers-color-scheme: dark) {
+        #cover { background: linear-gradient(180deg, #0d2237 0%, #17425e 46%, #51382a 100%); }
+      }
+      #cover.gone { opacity: 0; visibility: hidden; pointer-events: none; }
+      .cover-sun {
+        position: absolute; top: 6%; right: 8%; width: 92px; height: 92px; border-radius: 50%;
+        background: radial-gradient(circle, #fff3c4 0%, #ffd968 55%, rgba(255, 217, 104, 0) 72%);
+      }
+      .cloud { position: absolute; background: rgba(255,255,255,0.9); border-radius: 999px; filter: blur(1px); animation: cloudmove linear infinite; }
+      .cloud::before, .cloud::after { content: ""; position: absolute; background: inherit; border-radius: 50%; }
+      .cloud.c1 { width: 130px; height: 34px; top: 12%; left: -140px; animation-duration: 46s; }
+      .cloud.c1::before { width: 56px; height: 56px; top: -26px; left: 22px; }
+      .cloud.c1::after { width: 40px; height: 40px; top: -16px; left: 66px; }
+      .cloud.c2 { width: 96px; height: 26px; top: 30%; left: -110px; animation-duration: 62s; animation-delay: -24s; opacity: 0.8; }
+      .cloud.c2::before { width: 42px; height: 42px; top: -20px; left: 16px; }
+      .cloud.c2::after { width: 30px; height: 30px; top: -12px; left: 50px; }
+      .cloud.c3 { width: 160px; height: 40px; top: 5%; left: -180px; animation-duration: 74s; animation-delay: -50s; opacity: 0.65; }
+      .cloud.c3::before { width: 66px; height: 66px; top: -32px; left: 30px; }
+      .cloud.c3::after { width: 48px; height: 48px; top: -20px; left: 84px; }
+      @keyframes cloudmove { from { transform: translateX(0); } to { transform: translateX(120vw); } }
+
+      .far-kite { position: absolute; animation: bob 6s ease-in-out infinite alternate; }
+      @keyframes bob { from { transform: translateY(0) rotate(-5deg); } to { transform: translateY(-18px) rotate(6deg); } }
+
+      .cover-inner { position: relative; z-index: 3; margin-top: 4vh; max-width: 560px; width: 100%; }
+      .ganesh { font-family: "Cormorant Garamond", serif; font-size: 1.15rem; letter-spacing: 0.06em; color: #8a5a12; font-weight: 600; }
+      @media (prefers-color-scheme: dark) { .ganesh { color: #f0cd7e; } }
+      .cover-title {
+        font-size: clamp(2rem, 7.5vw, 3.1rem); font-weight: 700; line-height: 1.12; margin-top: 10px;
+        color: #14455e; text-shadow: 0 2px 0 rgba(255,255,255,0.35);
+      }
+      @media (prefers-color-scheme: dark) { .cover-title { color: #ffe9bb; text-shadow: none; } }
+      .cover-sub { margin-top: 10px; font-size: 0.98rem; color: #2b5a72; font-weight: 400; }
+      @media (prefers-color-scheme: dark) { .cover-sub { color: #cfe4ec; } }
+
+      /* the hero kite on its thread */
+      #threadSvg { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; }
+      #manjha { fill: none; stroke: rgba(255,255,255,0.95); stroke-width: 2.4; stroke-dasharray: 6 7; filter: drop-shadow(0 1px 2px rgba(20,69,94,0.5)); }
+      #heroKite {
+        position: absolute; z-index: 2; width: min(46vw, 215px);
+        left: 50%; top: 34%;
+        transform: translate(-50%, 0) rotate(-6deg);
+        animation: kitefloat 4.5s ease-in-out infinite alternate;
+        filter: drop-shadow(0 16px 18px rgba(20, 69, 94, 0.35));
+      }
+      @keyframes kitefloat {
+        from { transform: translate(-53%, -6px) rotate(-9deg); }
+        to { transform: translate(-47%, 10px) rotate(7deg); }
+      }
+      #cover.flying #heroKite { animation: kitefly 2.4s cubic-bezier(0.5, 0, 0.3, 1) forwards; }
+      @keyframes kitefly {
+        0% { transform: translate(-50%, 0) rotate(-6deg) scale(1); }
+        35% { transform: translate(6vw, -16vh) rotate(14deg) scale(1.06); }
+        70% { transform: translate(-14vw, -30vh) rotate(-12deg) scale(1.12); }
+        100% { transform: translate(24vw, -58vh) rotate(18deg) scale(1.2); opacity: 0.15; }
+      }
+      #cover.flying #manjha { animation: threadpull 2.4s ease forwards; }
+      @keyframes threadpull { to { opacity: 0; } }
+      #cover.flying .cloud { animation-duration: 7s; }
+
+      /* spool + button */
+      .spool-zone { position: relative; z-index: 3; margin-top: auto; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+      .spool { width: 86px; height: 86px; animation: spinspool 7s linear infinite; }
+      #cover.flying .spool { animation-duration: 0.55s; }
+      @keyframes spinspool { to { transform: rotate(360deg); } }
+      #openBtn {
+        font-family: "Poppins", sans-serif; font-weight: 600; font-size: 1.02rem; letter-spacing: 0.02em;
+        color: #fff; background: linear-gradient(135deg, var(--saffron), var(--pink));
+        border: none; border-radius: 999px; padding: 15px 34px; cursor: pointer;
+        box-shadow: 0 12px 26px rgba(231, 84, 128, 0.42);
+        display: inline-flex; align-items: center; gap: 10px;
+        transition: transform 0.2s ease;
+      }
+      #openBtn:active { transform: scale(0.96); }
+      .cover-hint { font-size: 0.82rem; color: #2b5a72; }
+      @media (prefers-color-scheme: dark) { .cover-hint { color: #bcd6e0; } }
+
+      .ribbon { position: absolute; width: 10px; height: 26px; border-radius: 3px; z-index: 4; pointer-events: none; opacity: 0; }
+      #cover.flying .ribbon { animation: ribbonfall 2.6s ease-in forwards; }
+      @keyframes ribbonfall {
+        0% { opacity: 1; transform: translateY(0) rotate(0deg); }
+        100% { opacity: 0; transform: translateY(64vh) rotate(560deg); }
+      }
+
+      /* ---------- PAGE ---------- */
+      main { position: relative; z-index: 1; max-width: 1060px; margin: 0 auto; padding: 0 18px 90px; visibility: hidden; }
+      main.shown { visibility: visible; }
+      main.shown .descend { animation: descend 1.5s cubic-bezier(0.34, 1.3, 0.5, 1) both; transform-origin: top center; }
+      @keyframes descend {
+        0% { transform: translateY(-68vh) rotate(2.4deg); opacity: 0; }
+        55% { opacity: 1; }
+        78% { transform: translateY(8px) rotate(-1.1deg); }
+        100% { transform: translateY(0) rotate(0deg); }
+      }
+      section { margin-top: 64px; }
+      .sec-head { text-align: center; margin-bottom: 26px; }
+      .sec-head h2 { font-size: clamp(1.8rem, 5.5vw, 2.5rem); font-weight: 700; color: var(--ink); }
+      .sec-head .rule { width: 74px; height: 3px; border-radius: 3px; background: linear-gradient(90deg, var(--saffron), var(--pink)); margin: 10px auto 0; }
+      .sec-head p { margin-top: 10px; color: var(--ink-soft); font-size: 0.95rem; }
+
+      /* hero card */
+      .hero-card {
+        margin-top: 34px; background: var(--paper); border: 1px solid var(--card-line); border-radius: 22px;
+        box-shadow: var(--shadow); padding: clamp(26px, 6vw, 52px) clamp(18px, 5vw, 48px); text-align: center; position: relative; overflow: hidden;
+      }
+      .hero-card::before, .hero-card::after {
+        content: ""; position: absolute; width: 54px; height: 54px; top: 14px;
+        background: linear-gradient(135deg, var(--teal) 0 50%, var(--saffron) 50% 100%);
+        clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%); opacity: 0.85;
+      }
+      .hero-card::before { left: 14px; transform: rotate(-10deg); }
+      .hero-card::after { right: 14px; transform: rotate(10deg); background: linear-gradient(135deg, var(--pink) 0 50%, var(--gold) 50% 100%); }
+      .host-line { font-family: "Cormorant Garamond", serif; font-size: clamp(1.05rem, 3.4vw, 1.3rem); font-weight: 600; color: var(--ink-soft); }
+      .host-line b { color: var(--ink); }
+      .with { font-family: "Cormorant Garamond", serif; font-style: italic; font-size: 1.15rem; color: var(--gold-deep); margin-top: 16px; }
+      .names { font-family: "Allura", cursive; font-size: clamp(3.4rem, 13vw, 6rem); line-height: 1.16; color: var(--gold-deep); margin-top: 2px; }
+      .names .amp { font-size: 0.55em; color: var(--pink); }
+      .hero-tag { margin-top: 6px; font-family: "Cormorant Garamond", serif; font-size: clamp(1.1rem, 3.6vw, 1.4rem); font-style: italic; color: var(--ink-soft); }
+      .hero-meta { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+      .chip {
+        background: var(--paper-2); border: 1px solid var(--card-line); color: var(--ink);
+        border-radius: 999px; padding: 9px 18px; font-size: 0.9rem; font-weight: 500;
+      }
+      .chip b { color: var(--gold-deep); }
+
+      /* countdown */
+      .count-row { margin-top: 28px; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+      .count-box {
+        min-width: 76px; background: linear-gradient(160deg, var(--paper-2), var(--paper));
+        border: 1px solid var(--card-line); border-radius: 14px; padding: 12px 8px 10px;
+      }
+      .count-box .num { font-family: "Cormorant Garamond", serif; font-size: 2rem; font-weight: 700; line-height: 1; color: var(--ink); }
+      .count-box .lbl { font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft); margin-top: 5px; }
+
+      /* flip cards */
+      .flip-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+      @media (max-width: 680px) { .flip-grid { grid-template-columns: 1fr; } }
+      .flip { perspective: 1400px; height: 340px; cursor: pointer; outline: none; }
+      .flip-inner { position: relative; width: 100%; height: 100%; transform-style: preserve-3d; transition: transform 0.9s cubic-bezier(0.4, 0.1, 0.2, 1); }
+      .flip.flipped .flip-inner { transform: rotateY(180deg); }
+      .face {
+        position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden;
+        border-radius: 20px; border: 1px solid var(--card-line); box-shadow: var(--shadow);
+        display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 26px 22px; gap: 8px;
+      }
+      .face.front { background: var(--paper); }
+      .face.back { background: linear-gradient(160deg, var(--paper-2), var(--paper)); transform: rotateY(180deg); }
+      .face .kite-ic { width: 52px; height: 52px; }
+      .face .side { font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--pink); font-weight: 600; }
+      .face h3 { font-size: 1.65rem; font-weight: 700; }
+      .face .who { font-family: "Cormorant Garamond", serif; font-size: 1.12rem; color: var(--ink-soft); line-height: 1.5; }
+      .face .who b { color: var(--ink); font-size: 1.25rem; }
+      .tap-hint { margin-top: 8px; font-size: 0.78rem; color: var(--gold-deep); border: 1px dashed var(--card-line); padding: 6px 14px; border-radius: 999px; }
+
+      /* events */
+      .events { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+      @media (max-width: 680px) { .events { grid-template-columns: 1fr; } }
+      .event {
+        background: var(--paper); border: 1px solid var(--card-line); border-radius: 18px; box-shadow: var(--shadow);
+        padding: 26px 24px; position: relative; overflow: hidden;
+      }
+      .event::before {
+        content: ""; position: absolute; top: -26px; right: -26px; width: 84px; height: 84px; opacity: 0.16;
+        clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+      }
+      .event.haldi::before { background: var(--saffron); }
+      .event.sangeet::before { background: var(--pink); }
+      .event.wedding::before { background: var(--teal); }
+      .event.reception::before { background: var(--gold); }
+      .event .day { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 600; }
+      .event.haldi .day { color: var(--saffron); } .event.sangeet .day { color: var(--pink); }
+      .event.wedding .day { color: var(--teal); } .event.reception .day { color: var(--gold-deep); }
+      .event h3 { font-size: 1.7rem; font-weight: 700; margin-top: 4px; }
+      .event .when { font-family: "Cormorant Garamond", serif; font-size: 1.18rem; font-weight: 600; margin-top: 6px; }
+      .event .where { color: var(--ink-soft); font-size: 0.92rem; margin-top: 6px; line-height: 1.55; }
+
+      /* calendar */
+      .cal-wrap { background: var(--paper); border: 1px solid var(--card-line); border-radius: 20px; box-shadow: var(--shadow); padding: 26px 20px 30px; max-width: 520px; margin: 0 auto; }
+      .cal-title { text-align: center; font-family: "Cormorant Garamond", serif; font-size: 1.5rem; font-weight: 700; }
+      .cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; margin-top: 16px; text-align: center; }
+      .cal-grid .dow { font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); font-weight: 600; padding: 4px 0; }
+      .cal-grid .d { padding: 9px 0; border-radius: 10px; font-size: 0.92rem; position: relative; }
+      .cal-grid .d.dim { opacity: 0.3; }
+      .cal-grid .d.big {
+        background: linear-gradient(135deg, var(--saffron), var(--pink)); color: #fff; font-weight: 700;
+        clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%); border-radius: 0; padding: 12px 0;
+      }
+      .cal-note { text-align: center; margin-top: 14px; font-family: "Cormorant Garamond", serif; font-style: italic; font-size: 1.08rem; color: var(--ink-soft); }
+
+      /* venue */
+      .venue-card { background: var(--paper); border: 1px solid var(--card-line); border-radius: 20px; box-shadow: var(--shadow); padding: 30px 26px; text-align: center; max-width: 620px; margin: 0 auto; }
+      .venue-card h3 { font-size: 1.7rem; font-weight: 700; }
+      .venue-card p { color: var(--ink-soft); margin-top: 8px; line-height: 1.6; font-size: 0.95rem; }
+      .btn-row { margin-top: 20px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+      .btn {
+        display: inline-flex; align-items: center; gap: 8px; text-decoration: none; font-weight: 600; font-size: 0.92rem;
+        padding: 13px 26px; border-radius: 999px; border: 1px solid var(--card-line); color: var(--ink); background: var(--paper-2);
+      }
+      .btn.primary { background: linear-gradient(135deg, var(--teal), #0b7c7b); color: #fff; border: none; box-shadow: 0 10px 22px rgba(14, 149, 148, 0.35); }
+
+      footer { margin-top: 70px; text-align: center; color: var(--ink-soft); }
+      footer .fam { font-family: "Cormorant Garamond", serif; font-size: 1.3rem; font-weight: 600; color: var(--ink); }
+      footer .sample { margin-top: 14px; font-size: 0.78rem; letter-spacing: 0.05em; opacity: 0.85; }
+
+      /* music toggle */
+      #musicBtn {
+        position: fixed; right: 16px; bottom: calc(16px + env(safe-area-inset-bottom)); z-index: 70;
+        width: 54px; height: 54px; border-radius: 50%; border: 1px solid var(--card-line);
+        background: var(--paper); color: var(--gold-deep); box-shadow: var(--shadow); cursor: pointer;
+        display: none; align-items: center; justify-content: center;
+      }
+      #musicBtn.on { display: flex; }
+      #musicBtn .bars { display: flex; gap: 3px; align-items: flex-end; height: 20px; }
+      #musicBtn .bars i { width: 4px; background: var(--gold-deep); border-radius: 2px; height: 8px; }
+      #musicBtn.playing .bars i { animation: eq 0.9s ease-in-out infinite alternate; }
+      #musicBtn .bars i:nth-child(2) { animation-delay: 0.25s; } #musicBtn .bars i:nth-child(3) { animation-delay: 0.5s; }
+      @keyframes eq { from { height: 6px; } to { height: 20px; } }
+
+      @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after { animation-duration: 0.01s !important; animation-iteration-count: 1 !important; transition-duration: 0.2s !important; }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- reusable kite symbol -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+      <defs>
+        <g id="kiteShape">
+          <path d="M50 2 L92 46 L50 118 L8 46 Z" fill="#e75480" />
+          <path d="M50 2 L92 46 L50 60 Z" fill="#f08c1e" />
+          <path d="M50 2 L8 46 L50 60 Z" fill="#ffd23e" />
+          <path d="M50 60 L92 46 L50 118 Z" fill="#0e9594" />
+          <path d="M50 60 L8 46 L50 118 Z" fill="#2cb5a4" />
+          <path d="M50 116 q-8 16 2 26 q10 10 2 24" fill="none" stroke="#c8912a" stroke-width="3" stroke-linecap="round" />
+          <path d="M50 140 l-9 6 l9 6 l9 -6 Z" fill="#e75480" />
+          <path d="M54 164 l-9 6 l9 6 l9 -6 Z" fill="#f08c1e" />
+        </g>
+      </defs>
+    </svg>
+
+    <div class="bg-kites" aria-hidden="true">
+      <svg style="left:6%; top:16%; width:44px" viewBox="0 0 100 180"><use href="#kiteShape" /></svg>
+      <svg style="right:9%; top:38%; width:34px; animation-delay:-4s" viewBox="0 0 100 180"><use href="#kiteShape" /></svg>
+      <svg style="left:12%; top:64%; width:28px; animation-delay:-7s" viewBox="0 0 100 180"><use href="#kiteShape" /></svg>
+    </div>
+
+    <!-- ================= COVER ================= -->
+    <div id="cover" role="dialog" aria-label="Wedding invitation cover">
+      <div class="cover-sun"></div>
+      <div class="cloud c1"></div><div class="cloud c2"></div><div class="cloud c3"></div>
+      <svg class="far-kite" style="left:10%; top:22%; width:40px" viewBox="0 0 100 180"><use href="#kiteShape" /></svg>
+      <svg class="far-kite" style="right:13%; top:15%; width:30px; animation-delay:-3s" viewBox="0 0 100 180"><use href="#kiteShape" /></svg>
+
+      <svg id="threadSvg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+        <path id="manjha" d="M50 96 C 44 78, 60 66, 50 47" vector-effect="non-scaling-stroke" />
+      </svg>
+
+      <svg id="heroKite" viewBox="0 0 100 180" aria-hidden="true"><use href="#kiteShape" /></svg>
+
+      <div class="cover-inner">
+        <p class="ganesh">॥ श्री गणेशाय नमः ॥</p>
+        <h1 class="cover-title">A Love Written<br />on the Wind</h1>
+        <p class="cover-sub">One kite. One thread. Two hearts learning to fly together.<br />An invitation is waiting in the sky…</p>
+      </div>
+
+      <div class="spool-zone">
+        <svg class="spool" viewBox="0 0 100 100" aria-hidden="true">
+          <circle cx="50" cy="50" r="44" fill="#8a5a2b" />
+          <circle cx="50" cy="50" r="36" fill="#e75480" />
+          <g stroke="#fff3d6" stroke-width="4" stroke-linecap="round">
+            <line x1="50" y1="18" x2="50" y2="82" /><line x1="18" y1="50" x2="82" y2="50" />
+            <line x1="27" y1="27" x2="73" y2="73" /><line x1="73" y1="27" x2="27" y2="73" />
+          </g>
+          <circle cx="50" cy="50" r="9" fill="#ffd23e" stroke="#8a5a2b" stroke-width="3" />
+        </svg>
+        <button id="openBtn" type="button">
+          <svg width="20" height="30" viewBox="0 0 100 180" aria-hidden="true"><use href="#kiteShape" /></svg>
+          Reel In the Kite
+        </button>
+        <p class="cover-hint">Tap to pull the manjha — the invitation will fly down to you</p>
+      </div>
+    </div>
+
+    <!-- ================= PAGE ================= -->
+    <main id="page">
+      <div class="descend">
+        <div class="hero-card">
+          <p class="host-line">With the blessings of <b>Shri Keshavlal Patel</b> &amp; <b>Smt. Shardaben Patel</b>,<br />
+            <b>Shri Rakesh Patel</b> &amp; <b>Smt. Meena Patel</b> joyfully invite you to the wedding of</p>
+          <p class="with">their beloved son</p>
+          <h1 class="names">Jay <span class="amp">&amp;</span> Hetal</h1>
+          <p class="hero-tag">“Kai po che!” — some strings are tied by the heart, and they only pull two souls closer.</p>
+          <div class="hero-meta">
+            <span class="chip"><b>Wedding</b> · Friday, 15 January 2027</span>
+            <span class="chip"><b>Venue</b> · Sky Terrace Lawns, Ahmedabad</span>
+          </div>
+          <div class="count-row" id="countdown" aria-label="Countdown to the wedding">
+            <div class="count-box"><div class="num" id="cd-d">–</div><div class="lbl">Days</div></div>
+            <div class="count-box"><div class="num" id="cd-h">–</div><div class="lbl">Hours</div></div>
+            <div class="count-box"><div class="num" id="cd-m">–</div><div class="lbl">Minutes</div></div>
+            <div class="count-box"><div class="num" id="cd-s">–</div><div class="lbl">Seconds</div></div>
+          </div>
+        </div>
+      </div>
+
+      <section aria-label="The two families">
+        <div class="sec-head">
+          <h2>Two Families, One Sky</h2>
+          <div class="rule"></div>
+          <p>Tap a card to turn it over and meet the grandparents who tied the first knots.</p>
+        </div>
+        <div class="flip-grid">
+          <div class="flip" id="flipGroom" tabindex="0" role="button" aria-label="Groom's family card. Activate to flip.">
+            <div class="flip-inner">
+              <div class="face front">
+                <svg class="kite-ic" viewBox="0 0 100 180"><use href="#kiteShape" /></svg>
+                <p class="side">The Groom</p>
+                <h3>Jay</h3>
+                <p class="who">Son of<br /><b>Shri Rakesh Patel</b> &amp; <b>Smt. Meena Patel</b><br />Ahmedabad</p>
+                <span class="tap-hint">Tap to flip — Grand Parents</span>
+              </div>
+              <div class="face back">
+                <p class="side">Grand Parents</p>
+                <h3>The Patel Elders</h3>
+                <p class="who"><b>Shri Keshavlal Patel</b><br />&amp;<br /><b>Smt. Shardaben Patel</b></p>
+                <p class="who" style="font-style:italic">Whose manjha of blessings has held this family high for generations.</p>
+                <span class="tap-hint">Tap to flip back</span>
+              </div>
+            </div>
+          </div>
+          <div class="flip" id="flipBride" tabindex="0" role="button" aria-label="Bride's family card. Activate to flip.">
+            <div class="flip-inner">
+              <div class="face front">
+                <svg class="kite-ic" viewBox="0 0 100 180"><use href="#kiteShape" /></svg>
+                <p class="side">The Bride</p>
+                <h3>Hetal</h3>
+                <p class="who">Daughter of<br /><b>Shri Sanjay Patel</b> &amp; <b>Smt. Kavita Patel</b><br />Surat</p>
+                <span class="tap-hint">Tap to flip — Grand Parents</span>
+              </div>
+              <div class="face back">
+                <p class="side">Grand Parents</p>
+                <h3>The Patel Elders</h3>
+                <p class="who"><b>Shri Ramanlal Patel</b><br />&amp;<br /><b>Smt. Lilaben Patel</b></p>
+                <p class="who" style="font-style:italic">Who taught her that the higher a kite flies, the deeper its roots at home.</p>
+                <span class="tap-hint">Tap to flip back</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section aria-label="Wedding celebrations">
+        <div class="sec-head">
+          <h2>Wedding Celebrations</h2>
+          <div class="rule"></div>
+          <p>Four days of colour, garba and Gujarati sweetness — come, hold a corner of our sky.</p>
+        </div>
+        <div class="events">
+          <article class="event haldi">
+            <p class="day">Wednesday · 13 Jan 2027</p>
+            <h3>Haldi &amp; Pithi</h3>
+            <p class="when">10:00 AM onwards</p>
+            <p class="where">Patel Residence, Satellite, Ahmedabad<br />Turmeric, laughter and a sky full of yellow kites.</p>
+          </article>
+          <article class="event sangeet">
+            <p class="day">Thursday · 14 Jan 2027</p>
+            <h3>Sangeet &amp; Garba Night</h3>
+            <p class="when">7:00 PM onwards</p>
+            <p class="where">Sky Terrace Lawns, S.P. Ring Road, Ahmedabad<br />Uttarayan evening — fly a kite by day, dance garba under the stars by night.</p>
+          </article>
+          <article class="event wedding">
+            <p class="day">Friday · 15 Jan 2027</p>
+            <h3>The Wedding</h3>
+            <p class="when">Baraat 8:30 AM · Wedding 10:30 AM onwards</p>
+            <p class="where">Sky Terrace Lawns, S.P. Ring Road, Ahmedabad<br />Followed by lunch. Jay arrives dancing; Hetal arrives glowing.</p>
+          </article>
+          <article class="event reception">
+            <p class="day">Saturday · 16 Jan 2027</p>
+            <h3>Reception</h3>
+            <p class="when">7:00 PM onwards</p>
+            <p class="where">Sky Terrace Lawns, S.P. Ring Road, Ahmedabad<br />An evening of blessings, dinner and one last flight together.</p>
+          </article>
+        </div>
+      </section>
+
+      <section aria-label="Save the date calendar">
+        <div class="sec-head">
+          <h2>Save the Date</h2>
+          <div class="rule"></div>
+        </div>
+        <div class="cal-wrap">
+          <p class="cal-title">January 2027</p>
+          <div class="cal-grid" id="calGrid"></div>
+          <p class="cal-note">The diamond in the sky marks the day — Friday, 15 January 2027.</p>
+        </div>
+      </section>
+
+      <section aria-label="Venue">
+        <div class="sec-head">
+          <h2>The Venue</h2>
+          <div class="rule"></div>
+        </div>
+        <div class="venue-card">
+          <h3>Sky Terrace Lawns</h3>
+          <p>S.P. Ring Road, Ahmedabad, Gujarat<br />An open-air terrace lawn where the January sky does the decorating — arrive a little early and watch the kites with us.</p>
+          <div class="btn-row">
+            <a class="btn primary" href="https://www.google.com/maps/search/?api=1&query=S.P.+Ring+Road+Ahmedabad+Gujarat" target="_blank" rel="noopener">Get Directions</a>
+            <a class="btn" href="#" id="icsBtn">Add to Calendar</a>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <p class="fam">With love &amp; blessings — The Patel Family</p>
+        <p style="margin-top:8px; font-size:0.9rem;">Jay &amp; Hetal · 15 January 2027 · Ahmedabad</p>
+        <p class="sample">Sample design by Nimantran Kala · @nimantran.kala</p>
+      </footer>
+    </main>
+
+    <button id="musicBtn" type="button" aria-label="Toggle background music">
+      <span class="bars" aria-hidden="true"><i></i><i></i><i></i></span>
+    </button>
+
+    <script>
+      (function () {
+        "use strict";
+        var cover = document.getElementById("cover");
+        var page = document.getElementById("page");
+        var openBtn = document.getElementById("openBtn");
+        var musicBtn = document.getElementById("musicBtn");
+        var opened = false;
+
+        /* ---------- background tune (Web Audio bansuri-style) ---------- */
+        var actx = null, master = null, musicOn = false, timer = null, step = 0;
+        // Gentle pentatonic phrase (frequencies in Hz) with rests as 0
+        var MELODY = [392, 0, 440, 494, 587, 494, 440, 392, 330, 0, 392, 440, 494, 0, 440, 392,
+                      587, 659, 587, 494, 440, 494, 587, 0, 494, 440, 392, 330, 294, 0, 330, 392];
+        function initAudio() {
+          actx = new (window.AudioContext || window.webkitAudioContext)();
+          master = actx.createGain();
+          master.gain.value = 0.16;
+          master.connect(actx.destination);
+          // soft tanpura-like drone
+          [98, 147, 196].forEach(function (f) {
+            var o = actx.createOscillator(), g = actx.createGain();
+            o.type = "sine"; o.frequency.value = f; g.gain.value = 0.05;
+            o.connect(g); g.connect(master); o.start();
+          });
+        }
+        function playNote(freq, t) {
+          if (!freq) return;
+          var o = actx.createOscillator(), g = actx.createGain(), vib = actx.createOscillator(), vg = actx.createGain();
+          o.type = "sine"; o.frequency.value = freq;
+          vib.frequency.value = 5.2; vg.gain.value = freq * 0.006;
+          vib.connect(vg); vg.connect(o.frequency);
+          g.gain.setValueAtTime(0, t);
+          g.gain.linearRampToValueAtTime(0.5, t + 0.09);
+          g.gain.exponentialRampToValueAtTime(0.001, t + 0.85);
+          o.connect(g); g.connect(master);
+          o.start(t); vib.start(t); o.stop(t + 0.9); vib.stop(t + 0.9);
+        }
+        function startMusic() {
+          if (!actx) initAudio();
+          if (actx.state === "suspended") actx.resume();
+          musicOn = true;
+          musicBtn.classList.add("playing");
+          step = 0;
+          var next = actx.currentTime + 0.1;
+          timer = setInterval(function () {
+            while (next < actx.currentTime + 0.6) {
+              playNote(MELODY[step % MELODY.length], next);
+              next += 0.42; step++;
+            }
+          }, 180);
+        }
+        function stopMusic() {
+          musicOn = false;
+          musicBtn.classList.remove("playing");
+          if (timer) { clearInterval(timer); timer = null; }
+        }
+        musicBtn.addEventListener("click", function () { musicOn ? stopMusic() : startMusic(); });
+
+        /* ---------- opening: reel in the kite ---------- */
+        openBtn.addEventListener("click", function () {
+          if (opened) return;
+          opened = true;
+          // ribbon confetti
+          var colors = ["#e75480", "#f08c1e", "#ffd23e", "#0e9594", "#2cb5a4"];
+          for (var i = 0; i < 16; i++) {
+            var r = document.createElement("div");
+            r.className = "ribbon";
+            r.style.background = colors[i % colors.length];
+            r.style.left = 12 + Math.random() * 76 + "%";
+            r.style.top = 30 + Math.random() * 22 + "%";
+            r.style.animationDelay = Math.random() * 0.5 + "s";
+            cover.appendChild(r);
+          }
+          cover.classList.add("flying");
+          startMusic();
+          setTimeout(function () {
+            page.classList.add("shown");
+            window.scrollTo(0, 0);
+          }, 1500);
+          setTimeout(function () {
+            cover.classList.add("gone");
+            musicBtn.classList.add("on");
+          }, 2500);
+        });
+
+        /* ---------- flip cards ---------- */
+        ["flipGroom", "flipBride"].forEach(function (id) {
+          var el = document.getElementById(id);
+          function flip() { el.classList.toggle("flipped"); }
+          el.addEventListener("click", flip);
+          el.addEventListener("keydown", function (e) {
+            if (e.key === "Enter" || e.key === " ") { e.preventDefault(); flip(); }
+          });
+        });
+
+        /* ---------- countdown ---------- */
+        var target = new Date("2027-01-15T10:30:00+05:30").getTime();
+        function pad(n) { return (n < 10 ? "0" : "") + n; }
+        function tick() {
+          var diff = Math.max(0, target - Date.now());
+          var d = Math.floor(diff / 86400000);
+          var h = Math.floor(diff / 3600000) % 24;
+          var m = Math.floor(diff / 60000) % 60;
+          var s = Math.floor(diff / 1000) % 60;
+          document.getElementById("cd-d").textContent = d;
+          document.getElementById("cd-h").textContent = pad(h);
+          document.getElementById("cd-m").textContent = pad(m);
+          document.getElementById("cd-s").textContent = pad(s);
+        }
+        tick(); setInterval(tick, 1000);
+
+        /* ---------- calendar: January 2027 (1 Jan 2027 is a Friday) ---------- */
+        var grid = document.getElementById("calGrid");
+        var dows = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+        dows.forEach(function (d) {
+          var el = document.createElement("div"); el.className = "dow"; el.textContent = d; grid.appendChild(el);
+        });
+        // Dec 28-31 2026 fill the first row (Mon-Thu), Jan 1 = Friday
+        [28, 29, 30, 31].forEach(function (d) {
+          var el = document.createElement("div"); el.className = "d dim"; el.textContent = d; grid.appendChild(el);
+        });
+        for (var day = 1; day <= 31; day++) {
+          var c = document.createElement("div");
+          c.className = "d" + (day === 15 ? " big" : "");
+          c.textContent = day;
+          if (day === 15) c.setAttribute("aria-label", "15 January 2027 — Wedding day");
+          grid.appendChild(c);
+        }
+
+        /* ---------- Add to Calendar (.ics download) ---------- */
+        document.getElementById("icsBtn").addEventListener("click", function (e) {
+          e.preventDefault();
+          var ics = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Nimantran Kala//Kite Sky//EN",
+            "BEGIN:VEVENT", "UID:jay-hetal-2027@nimantrankala", "DTSTAMP:20261102T000000Z",
+            "DTSTART:20270115T050000Z", "DTEND:20270115T093000Z",
+            "SUMMARY:Jay weds Hetal — Wedding",
+            "LOCATION:Sky Terrace Lawns\\, S.P. Ring Road\\, Ahmedabad\\, Gujarat",
+            "DESCRIPTION:Wedding of Jay and Hetal. Baraat 8:30 AM\\, wedding 10:30 AM onwards.",
+            "END:VEVENT", "END:VCALENDAR"].join("\r\n");
+          var blob = new Blob([ics], { type: "text/calendar" });
+          var a = document.createElement("a");
+          a.href = URL.createObjectURL(blob);
+          a.download = "Jay-Hetal-Wedding.ics";
+          document.body.appendChild(a); a.click(); a.remove();
+          setTimeout(function () { URL.revokeObjectURL(a.href); }, 4000);
+        });
+      })();
+    </script>
+  </body>
+</html>
